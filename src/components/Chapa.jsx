@@ -42,7 +42,7 @@ const Chapa = ({ price, orderId }) => {
         }
 
         try {
-            const { data } = await axios.get(`http://localhost:5000/api/order/verify-payment/${transactionId}`, { withCredentials: true });
+            const { data } = await axios.get(`https://nile-hope-client.vercel.app/api/order/verify-payment/${transactionId}`, { withCredentials: true });
 
             if (data.message === 'success') {
                 // Redirect to success page
