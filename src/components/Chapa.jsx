@@ -17,7 +17,7 @@ const Chapa = ({ price, orderId }) => {
 
     const create_payment = async () => {
         try {
-            const { data } = await axios.post('https://nile-hope-backend.onrender.com', {
+            const { data } = await axios.post('https://nile-hope-client.vercel.app/api/order/create-payment', {
                 price,
                 email: formData.email,
                 first_name: formData.first_name,
