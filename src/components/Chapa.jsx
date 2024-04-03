@@ -17,7 +17,7 @@ const Chapa = ({ price, orderId }) => {
 
     const create_payment = async () => {
         try {
-            const { data } = await axios.post('http://localhost:5000/api/order/create-payment', {
+            const { data } = await axios.post('https://nile-hope-backend.onrender.com', {
                 price,
                 email: formData.email,
                 first_name: formData.first_name,
