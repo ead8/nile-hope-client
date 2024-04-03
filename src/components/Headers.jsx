@@ -124,8 +124,8 @@ const Headers = () => {
                                 </ul>
                                 <div className='flex md-lg:hidden justify-center items-center gap-5'>
                                 <div className="link cursor-pointer text-blue-600 hover:text-green-200">
-                              <div onClick={() => userInfo ? navigate('/returns') : navigate('/login')} className={`pb-0 block text-sm font-bold md-lg:hidden ${pathname === '/returns' ? 'text-[#7fad39]' : 'text-slate-600'}`}>Returns</div>
-                              <div onClick={() => userInfo ? navigate('/returns') : navigate('/login')} className={`p-1 block text-sm font-bold md-lg:hidden ${pathname === '/returns' ? 'text-[#7fad39]' : 'text-slate-600'}`}>& Or Orders</div>
+                              <div onClick={() => userInfo ? navigate('/returns') : navigate('/login')} className={`pb-0 block text-sm font-bold md-lg:hidden ${pathname === '/dashboard/return-products' ? 'text-[#7fad39]' : 'text-slate-600'}`}>Returns</div>
+                              <div onClick={() => userInfo ? navigate('/dashboard/return-products') : navigate('/login')} className={`p-1 block text-sm font-bold md-lg:hidden ${pathname === '/dashboard/return-products' ? 'text-[#7fad39]' : 'text-slate-600'}`}>& Or Orders</div>
                                </div>
                                     <div className='flex justify-center gap-5'>
                                         <div onClick={()=>navigate(userInfo ? '/dashboard/my-wishlist' : '/login')} className='relative flex justify-center items-center cursor-pointer w-[35px] h-[35px] rounded-full bg-[#e2e2e2]'>
@@ -181,7 +181,7 @@ const Headers = () => {
                             </li>
 
                             <li>
-                                <Link to='/returns' className={`py-2 block ${pathname === '/returns' ? 'text-[#7fad39]' : 'text-slate-600'}`}>Returns</Link>
+                                <Link to='/dashboard/return-products' className={`py-2 block ${pathname === '/dashboard/return-products' ? 'text-[#7fad39]' : 'text-slate-600'}`}>Returns</Link>
                             </li>
 
                             <li>
