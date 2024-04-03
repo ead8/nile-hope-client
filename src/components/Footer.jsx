@@ -18,7 +18,7 @@ const Footer = () => {
             <div className='w-[85%] flex flex-wrap mx-auto border-b py-16 md-lg:pb-10 sm:pb-6'>
                 <div className='w-3/12 lg:w-4/12 sm:w-full'>
                     <div className='flex flex-col gap-3'>
-                        <img className='w-[190px] h-[70x]' src="http://localhost:3000/images/nile-logo.png" alt="logo" />
+                        <img className='w-[190px] h-[70x]' src="https://nile-hope-client.vercel.app/images/nile-logo.png" alt="logo" />
                         <ul className='flex flex-col gap-2 text-slate-50'>
                             <li>Address : Addis Ababa,Ethiopia</li>
                             <li>Phone : +251-938-817-656</li>

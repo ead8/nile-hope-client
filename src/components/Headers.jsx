@@ -91,7 +91,7 @@ const Headers = () => {
                         <div className='md-lg:w-full w-3/12 md-lg:pt-2'>
                         <div className='flex justify-between items-center '>
                                 <Link to='/'>
-                                    <img src="http://localhost:3000/images/nile-logo.png" alt="logo"  className='w-32 h-auto mx-auto mt-2 -ml-2 rounded-r-full'/>
+                                    <img src="https://nile-hope-client.vercel.app/images/nile-logo.png" alt="logo"  className='w-32 h-auto mx-auto mt-2 -ml-2 rounded-r-full'/>
                                 </Link>
                                 <select className="ml-2 bg-white border border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                                  <option>English</option>
@@ -160,7 +160,7 @@ const Headers = () => {
                 <div className={`w-[300px] z-[9999] transition-all duration-200 fixed  ${showShidebar ? '-left-[300px]' : 'left-0'} top-0 overflow-y-auto bg-white h-screen py-6 px-8`}>
                     <div className='flex justify-start flex-col gap-6'>
                         <Link to='/'>
-                            <img src="http://localhost:3000/images/nile-logo.png" alt="logo" />
+                            <img src="https://nile-hope-client.vercel.app/images/nile-logo.png" alt="logo" />
                         </Link>
                         <div className='flex justify-star items-center gap-10'>
                         <a 
