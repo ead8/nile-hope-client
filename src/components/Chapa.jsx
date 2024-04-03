@@ -17,7 +17,7 @@ const Chapa = ({ price, orderId }) => {
 
     const create_payment = async () => {
         try {
-            const { data } = await axios.post('https://nile-hope-client.vercel.app/api/order/create-payment', {
+            const { data } = await axios.post('https://nile-hope-backend.onrender.com/api/order/create-payment', {
                 price,
                 email: formData.email,
                 first_name: formData.first_name,
@@ -42,7 +42,7 @@ const Chapa = ({ price, orderId }) => {
         }
 
         try {
-            const { data } = await axios.get(`https://nile-hope-client.vercel.app/api/order/verify-payment/${transactionId}`, { withCredentials: true });
+            const { data } = await axios.get(`https://nile-hope-backend.onrender.com/api/order/verify-payment/${transactionId}`, { withCredentials: true });
 
             if (data.message === 'success') {
                 // Redirect to success page
