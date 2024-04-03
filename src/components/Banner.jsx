@@ -40,7 +40,7 @@ const Banner = () => {
             {
               [1, 2, 3, 4, 5, 6, 7].map((img, i) => (
                 <Link className='lg-md:h-[150px] h-auto w-full block' key={i} to='#'> {/* Decreased the height value to 150px */}
-                  <img className='rounded-3xl h-[200px] object-cover w-full' src={`images/banner/${img}.jpg`}  alt="our banner" />
+                  <img className='rounded-3xl h-[200px] object-cover w-full' src={`http://localhost:3000/images/banner/${img}.jpg`}  alt="our banner" />
                 </Link>
               ))
             }
