@@ -59,12 +59,11 @@ const FeatureProducts = ({ products }) => {
                     {/* <div className='w-[100px] h-[4px] bg-[#7fad39] mt-4'></div> */}
                 </div>
             </div>
-            <div className='w-full grid grid-cols-4 md-lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-6'>
+            <div className='w-full grid grid-cols-4 md-lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-6 md:gap-2'>
                 {
                     products?.map((p, i) => <div key={i} className='border group transition-all duration-500 hover:shadow-md hover:-mt-3'>
-                        <div className='relative overflow-hidden'>
-                            
-                            <img className='sm:w-full w-full h-[240px]' src={p.images[0]} alt="product" />
+                        <div className='relative overflow-hidden '>
+                            <img className='sm:w-full w-full md:h-[160px]  h-[250px]' src={p.images[0]} alt="product" />
                             <ul className='flex transition-all duration-700 -bottom-10 justify-center items-center gap-2 absolute w-full group-hover:bottom-3'>
                                 <li onClick={() => add_wishlist(p)} className='w-[38px] h-[38px] cursor-pointer bg-white flex justify-center items-center rounded-full hover:bg-[#7fad39] hover:text-white hover:rotate-[720deg] transition-all' title="Add Whishlist"><AiFillHeart /></li>
                                 <Link to={`/product/details/${p.slug}`} className='w-[38px] h-[38px] cursor-pointer bg-white flex justify-center items-center rounded-full hover:bg-[#7fad39] hover:text-white hover:rotate-[720deg] transition-all' title="View The Item" ><FaEye /></Link>
@@ -74,11 +73,11 @@ const FeatureProducts = ({ products }) => {
                         
                         <div className='py-3 text-slate-600 px-2'>
                             <h2>{p.name}</h2>
-                            <div className='flex justify-start items-center gap-3'>
+                            <div className='flex md:text-sm md:flex-col md:items-end justify-start items-center gap-3'>
                             {
-                                p.discount ? <div className='flex justify-center items-center line-through text-red-500'>${p.discount+p.price}</div> : ""
+                                p.discount ? <div className='flex justify-center items-center line-through text-red-500'> {p.price+ p.discount} ET</div> : ""
                             }
-                                <span className='text-lg  font-bold'>${p.price}</span>
+                                <span className='text-lg  md:text-sm font-bold'> {p.price  }ETB</span>
                                 <div className='flex items-center'>
                                     <Ratings ratings={p.rating} />
                                 </div>
