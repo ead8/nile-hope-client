@@ -64,7 +64,7 @@ const Login = () => {
             }
             <div className='bg-slate-200 h-screen flex flex-col justify-center items-center'>
                 <div className='w-full justify-center items-center p-10'>
-                    <div className='grid grid-cols-2 h-full w-[60%] mx-auto bg-white rounded-md'>
+                    <div className='grid md:grid-cols-1 grid-cols-2 h-full md:w-full w-[60%] mx-auto bg-white rounded-md'>
                         <div className='px-8 py-8 h-full'>
                             <h2 className='text-center w-full text-xl text-slate-600 font-bold'>Login</h2>
                             <div>
@@ -96,7 +96,7 @@ const Login = () => {
                                 <p>You have no account ? <Link className='text-blue-500' to='/register'>Register</Link></p>
                             </div>
                         </div>
-                        <div className='w-full h-full  pr-4'>
+                        <div className='w-full block md:hidden h-full  pr-4'>
                             <img className='w-full h-[95%]' src=" https://nile-hope-client.vercel.app/images/login.jpg" alt="" />
                         </div>
                     </div>

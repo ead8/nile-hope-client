@@ -17,7 +17,7 @@ const Order = () => {
     }, [orderId])
 
     const status_update = () => {
-        
+        console.log('statu');
         dispatch(admin_order_status_update({ orderId, info: { status: 'Return Order'} }))
         setStatus('Return Order')
     }
@@ -50,13 +50,7 @@ const Order = () => {
                     <p>Pyment status: <span className={`py-[1px] text-xs px-3 ${myOrder.payment_status === 'paid' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'} rounded-md `}>{myOrder.payment_status}</span></p>
                     <p>Order status: <span className={`py-[1px] text-xs px-3 ${myOrder.delivery_status === 'paid' ? 'bg-indigo-100 text-indigo-800' : 'bg-red-100 text-red-800'} rounded-md `}>{myOrder.delivery_status}</span></p>
                     <div className='flex justify-between items-center p-4'>
-                    <div onClick={()=>{
-                        if ( myOrder.delivery_status==='Return Order' ) {
-                            toast.error('Return Order Already Sent!')
-                            return
-                        } 
-                       return status_update
-                    } } className='px-4 py-2 cursor-pointer focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]'>
+                    <div onClick={status_update } className='px-4 py-2 cursor-pointer focus:border-indigo-500 outline-none bg-[#283046] border border-slate-700 rounded-md text-[#d0d2d6]'>
                         Return Order
                     </div>
                 </div>

@@ -67,7 +67,7 @@ const Register = () => {
             )}
             <div className='bg-slate-200 h-screen flex flex-col justify-center items-center '>
                 <div className='w-full justify-center items-center py-1 px-10'>
-                    <div className='grid grid-cols-2 w-[70%] mx-auto bg-white rounded-md'>
+                    <div className='grid md:grid-cols-1 grid-cols-2 md:w-full w-[70%] mx-auto bg-white rounded-md'>
                         <div className='px-8 py-8'>
                             <h2 className='text-center w-full text-xl text-slate-600 font-bold'>Register</h2>
                             <div>
@@ -168,7 +168,7 @@ const Register = () => {
                             </div>
                         </div>
                         <div className='w-full h-full py-4 pr-4'>
-                            <img className='w-full h-[95%]' src=' https://nile-hope-client.vercel.app/images/login.jpg' alt='' />
+                            <img className='w-full md:hidden h-[95%]' src=' https://nile-hope-client.vercel.app/images/login.jpg' alt='' />
                         </div>
                     </div>
                 </div>
