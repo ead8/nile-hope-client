@@ -49,11 +49,11 @@ const Login = () => {
     }, [successMessage, errorMessage])
 
     const handleFacebookLogin = () => {
-        window.location.href = "https://nile-hope-backend.onrender.com/api/auth/facebook";
+        window.location.href = "https://nile-hope-3.onrender.com/api/auth/facebook";
     };
 
     const handleGoogleLogin = () => {
-        window.location.href = "https://nile-hope-backend.onrender.com/api/auth/google";
+        window.location.href = "https://nile-hope-3.onrender.com/api/auth/google";
     };
     return (
         <div>
