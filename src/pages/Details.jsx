@@ -251,7 +251,7 @@ const Details = () => {
                             <div className='text-2xl text-red-500 font-bold flex gap-3'>
                                 {
                                     product.discount !== 0 ? <>
-                                        <h2 className='line-through'>${product.price +product.discount}</h2>
+                                        <h2 className='line-through'>ETB {product.price +product.discount}</h2>
                                         <h2>{product.price }<span className='ml-1'>ETB</span></h2>
                                     </> : <h2>Price : {product.price} {" "} <span className='ml-1'>ETB</span></h2>
                                 }
@@ -268,13 +268,13 @@ const Details = () => {
                                             <div onClick={inc} className='px-6 cursor-pointer' title="Add Product">+</div>
                                         </div>
                                         <div>
-                                            <button onClick={add_card} className='px-8 py-3 h-[50px] cursor-pointer hover:shadow-lg hover:shadow-purple-500/40 bg-purple-500 text-white'>Add To Cart</button>
+                                            <button onClick={add_card} className='px-8 py-3 h-[50px] cursor-pointer hover:shadow-lg hover:shadow-slate-800 bg-black text-white'>Add To Cart</button>
                                         </div>
                                     </> : ''
                                 }
                                 <div>
-                                    <div onClick={add_wishlist} className='h-[50px] w-[50px] flex justify-center items-center cursor-pointer hover:shadow-lg hover:shadow-cyan-500/40 bg-green-400 text-white'>
-                                        <AiFillHeart />
+                                    <div onClick={add_wishlist} className='h-[50px] w-[50px] flex justify-center items-center cursor-pointer hover:shadow-lg hover:shadow-cyan-500/40 bg-slate-300 text-green-500'>
+                                        <AiFillHeart/>
                                     </div>
                                 </div>
                             </div>
@@ -307,7 +307,7 @@ const Details = () => {
                                 {
                                     product.stock ? <button onClick={buy} className='px-8 py-3 h-[50px] cursor-pointer hover:shadow-lg hover:shadow-emerald-500/40 bg-gray-900 text-white'>Buy Now</button> : ""
                                 }
-                                {/* <Link to={`/dashboard/chat/${product.sellerId}`} className='px-8 py-3 h-[50px] cursor-pointer hover:shadow-lg hover:shadow-lime-500/40 bg-lime-500 text-white block'>Chat Seller</Link> */}
+                                {/* <Link to={`/dashboard/chat/${product.sellerId}`}limelime block'>Chat Seller</Link> */}
                             </div>
                         </div>
                     </div>
@@ -320,7 +320,7 @@ const Details = () => {
                         <div className='w-[72%] md-lg:w-full'>
                             <div className='pr-4 md-lg:pr-0'>
                                 <div id="reviews-section" ref={reviewsRef} className='grid grid-cols-2'>
-                                    <button onClick={() => setState('reviews')} className={`py-1 hover:text-white px-5 hover:bg-green-500 ${state === 'reviews' ? 'bg-green-500 text-white' : 'bg-slate-200 text-slate-700'} rounded-sm`}>Reviews</button>
+                                    <button onClick={() => setState('reviews')}  className={`py-1 hover:text-white px-5 hover:bg-green-500 ${state === 'reviews' ? 'bg-green-500 text-white' : 'bg-slate-200 text-slate-700'} rounded-sm`}>Reviews</button>
                                     <button onClick={() => setState('description')} className={`py-1 px-5 hover:text-white hover:bg-green-500 ${state === 'description' ? 'bg-green-500 text-white' : 'bg-slate-200 text-slate-700'} rounded-sm`}>Description</button>
                                 </div>
                                 <div>
@@ -343,12 +343,12 @@ const Details = () => {
                                                     <div className='relative h-[270px]'>
                                                         <img className='w-full h-full' src={p.images[0]} />
                                                         {
-                                                            p.discount !== 0 && <div className='flex justify-center items-center absolute text-white w-[38px] h-[38px] rounded-full bg-red-500 font-semibold text-xs left-2 top-2'>{p.discount}%</div>
+                                                            p.discount !== 0 && <div className='flex justify-center items-center absolute text-white w-[38px] h-[38px] rounded-full bg-red-500 font-semibold text-xs left-2 top-2'>-{p.discount}%</div>
                                                         }
                                                     </div>
                                                     <h2 className='text-slate-600 py-1'>{p.name}</h2>
                                                     <div className='flex gap-2'>
-                                                        <h2 className='text-[#6699ff] text-lg font-bold'>${p.price}</h2>
+                                                        <h2 className='text-[#6699ff] text-lg font-bold'>ETB {p.price}</h2>
                                                         <div className='flex items-center gap-2'>
                                                             <Ratings ratings={p.rating} />
                                                         </div>
@@ -397,13 +397,13 @@ const Details = () => {
                                                         <div className='absolute h-full w-full top-0 left-0 bg-[#000] opacity-25 hover:opacity-50 transition-all duration-500'></div>
                                                     </div>
                                                     {
-                                                        p.discount !== 0 && <div className='flex justify-center items-center absolute text-white w-[38px] h-[38px] rounded-full bg-red-500 font-semibold text-xs left-2 top-2'>{p.discount}%</div>
+                                                        p.discount !== 0 && <div className='flex justify-center items-center absolute text-white w-[38px] h-[38px] rounded-full bg-red-500 font-semibold text-xs left-2 top-2'>-{p.discount}%</div>
                                                     }
                                                 </div>
                                                 <div className='p-4 flex flex-col gap-1'>
                                                     <h2 className='text-slate-600 text-lg font-semibold'>{p.name}</h2>
                                                     <div className='flex justify-start items-center gap-3'>
-                                                        <h2 className='text-[#6699ff] text-lg font-bold'>${p.price}</h2>
+                                                        <h2 className='text-[#6699ff] text-lg font-bold'>ETB {p.price}</h2>
                                                         <div className='flex'>
                                                             <Ratings ratings={p.rating} />
                                                         </div>

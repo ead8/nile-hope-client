@@ -77,8 +77,8 @@ const Card = () => {
                             <div className='w-[67%] md-lg:w-full'>
                                 <div className='pr-3 md-lg:pr-0'>
                                     <div className='flex flex-col gap-3'>
-                                        <div className='bg-white p-4'>
-                                            <h2 className='text-md text-green-500 font-semibold'>Stock Products {card_products.length}</h2>
+                                        <div className='bg-green-600 p-4'>
+                                            <h2 className='text-md text-black font-semibold'>STOCK PRODUCTS - {card_products.length}</h2>
                                         </div>
                                         {
                                             card_products.map((p, i) => <div className='flex bg-white p-4 flex-col gap-2'>
@@ -98,8 +98,8 @@ const Card = () => {
                                                         </div>
                                                         <div className='flex justify-between w-5/12 sm:w-full sm:mt-3'>
                                                             <div className='pl-4 sm:pl-0'>
-                                                                <h2 className='text-lg text-orange-500'>${pt.productInfo.price - Math.floor((pt.productInfo.price * pt.productInfo.discount) / 100)} </h2>
-                                                                <p className='line-through'>{pt.productInfo.price}</p>
+                                                                <h2 className='text-lg text-slate-600'>ETB {pt.productInfo.price - Math.floor((pt.productInfo.price * pt.productInfo.discount) / 100)} </h2>
+                                                                <p className='line-through text-red-300'>ETB {pt.productInfo.price}</p>
                                                                 <p>-{pt.productInfo.discount}%</p>
                                                             </div>
                                                             <div className='flex gap-2 flex-col'>
@@ -163,22 +163,22 @@ const Card = () => {
                                         card_products.length > 0 && <div className='bg-white p-3 text-slate-600 flex flex-col gap-3'>
                                             <h2 className='text-xl font-bold'>Order Summary</h2>
                                             <div className='flex justify-between items-center'>
-                                                <span>{buy_product_item} Item</span>
-                                                <span>${price}</span>
+                                                <span>{buy_product_item} Items</span>
+                                                <span>ETB {price}</span>
                                             </div>
                                             <div className='flex justify-between items-center'>
                                                 <span>Shipping Fee</span>
-                                                <span>${shipping_fee}</span>
+                                                <span>ETB {shipping_fee}</span>
                                             </div>
                                             <div className='flex gap-2'>
                                                 <input className='w-full px-3 py-2 border border-slate-200 outline-0 focus:border-green-500 rounded-sm' type="text" placeholder='Input Vauchar Coupon' />
-                                                <button className='px-5 py-[1px] bg-blue-500 text-white rounded-sm uppercase text-sm'>Apply</button>
+                                                <button className='px-5 py-[1px] bg-black text-white rounded-sm uppercase text-sm'>Apply</button>
                                             </div>
                                             <div className='flex justify-between items-center'>
                                                 <span>Total</span>
-                                                <span className='text-lg text-orange-500'>${price + shipping_fee}</span>
+                                                <span className='text-lg text-orange-500'>ETB {price + shipping_fee}</span>
                                             </div>
-                                            <button onClick={redirect} className='px-5 py-[6px] rounded-sm hover:shadow-orange-500/20 hover:shadow-lg bg-orange-500 text-sm text-white uppercase'>Proceed to checkout {buy_product_item}</button>
+                                            <button onClick={redirect} className='px-5 py-[6px] rounded-sm hover:shadow-orange-500/20 hover:shadow-lg bg-black text-sm text-white uppercase'>Proceed to checkout {buy_product_item}</button>
                                         </div>
                                     }
                                 </div>

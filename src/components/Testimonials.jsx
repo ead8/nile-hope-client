@@ -42,7 +42,7 @@ const Testimonials = () => {
 
   return (
     <div className="max-w-4xl mx-auto mb-6 px-4 py-8 gap-4">
-  <h2 className="text-2xl font-bold shadow-md border-gray-400 text-center mb-4 py-8">Meet Our Testimonials</h2>
+  <h2 className="text-5xl font-semi-bold shadow-md border-gray-400 text-center mb-4 py-8">Meet Our Testimonials</h2>
   <Slider {...settings}>
     <div className="text-center bg-white rounded-lg shadow-lg px-6 py-8">
       <img src="/images/first_testimonial.jpg" alt="First Testimony" className="mx-auto w-32 h-32 rounded-full mb-4" />

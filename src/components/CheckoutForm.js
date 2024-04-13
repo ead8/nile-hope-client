@@ -46,7 +46,7 @@ const CheckoutForm = ({ orderId }) => {
             <button disabled={isLoading || !stripe || !elements} id='submit' className='px-10 py-[6px] rounded-sm hover:shadow-orange-500/20 hover:shadow-lg bg-orange-500 text-white'>
                 <span id='button-text'>
                     {
-                        isLoading ? <div>Loading.....</div> : "Pay now"
+                        isLoading ? <div>Loading...</div> : "Pay now"
                     }
                 </span>
             </button>

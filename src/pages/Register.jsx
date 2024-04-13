@@ -149,9 +149,9 @@ const Register = () => {
                                             checked={state.returnPolicy}
                                             onChange={checkboxHandle}
                                         />
-                                        <label htmlFor='returnPolicy'>You can only return within 24 hours of delivery.</label>
+                                        <label htmlFor='returnPolicy'>You can only return within 24 hours after delivery.</label>
                                     </div>
-                                    <button className='px-8 w-full py-2 bg-purple-500 shadow-lg hover:shadow-indigo-500/30 text-white rounded-md'>
+                                    <button className='px-8 w-full py-2 bg-black shadow-lg hover:shadow-indigo-500/30 text-white rounded-md'>
                                         Register
                                     </button>
                                 </form>

@@ -77,14 +77,14 @@ const Login = () => {
                                         <label htmlFor="password">Passoword</label>
                                         <input onChange={inputHandle} value={state.password} type="password" className='w-full px-3 py-2 border border-slate-200 outline-none focus:border-indigo-500 rounded-md' id='password' name='password' placeholder='password' />
                                     </div>
-                                    <button className='px-8 w-full py-2 bg-purple-500 shadow-lg hover:shadow-indigo-500/30 text-white rounded-md'>Login</button>
+                                    <button className='px-8 w-full py-2 bg-black shadow-lg hover:shadow-indigo-500/30 text-white rounded-md'>Login</button>
                                 </form>
                                 <div className='flex justify-center items-center py-2'>
                                     <div className='h-[1px] bg-slate-300 w-[95%]'></div>
                                     <span className='px-3 text-slate-600'>or</span>
                                     <div className='h-[1px] bg-slate-300 w-[95%]'></div>
                                 </div>
-                                <button onClick={handleFacebookLogin} className='px-8 w-full py-2 bg-indigo-500 shadow hover:shadow-indigo-500/30 text-white rounded-md flex justify-center items-center gap-2 mb-3'>
+                                <button onClick={handleFacebookLogin} className='px-8 w-full py-2 bg-blue-600 shadow hover:shadow-indigo-500/30 text-white rounded-md flex justify-center items-center gap-2 mb-3'>
                                     <span><FaFacebookF /></span>
                                     <span>Login with Facebook</span>
                                 </button>  <button onClick={handleGoogleLogin}  className='px-8 w-full py-2 bg-orange-500 shadow hover:shadow-orange-500/30 text-white rounded-md flex justify-center items-center gap-2 mb-3'>

@@ -22,12 +22,14 @@ const Shipping = () => {
         city: "",
         area: ""
     })
+
     const inputHandle = (e) => {
         setState({
             ...state,
             [e.target.name]: e.target.value
         })
     }
+
     const save = (e) => {
         e.preventDefault()
         const { name, address, phone, post, province, city, area } = state;
@@ -35,6 +37,7 @@ const Shipping = () => {
             setRes(true)
         }
     }
+
     const placeOrder = () => {
         dispatch(place_order({
             price,
@@ -46,6 +49,8 @@ const Shipping = () => {
             items
         }))
     }
+
+
     return (
         <div>
             <Headers />
@@ -109,7 +114,7 @@ const Shipping = () => {
                                                         <input onChange={inputHandle} value={state.area} type="text" className='w-full px-3 py-2 border border-slate-200 outline-none focus:border-indigo-500 rounded-md' name='area' placeholder='area' id='province' />
                                                     </div>
                                                     <div className='flex flex-col gap-1 mt-3 w-full'>
-                                                        <button className='px-3 py-[6px] rounded-sm hover:shadow-indigo-500/20 hover:shadow-lg bg-indigo-500 text-white'>Save</button>
+                                                        <button className='px-3 py-[6px] rounded-sm hover:shadow-indigo-500/20 hover:shadow-lg bg-black text-white'>Save</button>
                                                     </div>
                                                 </div>
                                             </form>
@@ -145,8 +150,8 @@ const Shipping = () => {
                                                 </div>
                                                 <div className='flex justify-end w-5/12 sm:w-full sm:mt-3'>
                                                     <div className='pl-4 sm:pl-0'>
-                                                        <h2 className='text-lg text-orange-500'>${pt.productInfo.price - Math.floor((pt.productInfo.price * pt.productInfo.discount) / 100)}</h2>
-                                                        <p className='line-through'>${pt.productInfo.price}</p>
+                                                        <h2 className='text-lg text-black'>ETB {pt.productInfo.price - Math.floor((pt.productInfo.price * pt.productInfo.discount) / 100)}</h2>
+                                                        <p className='line-through text-orange-400'>ETB {pt.productInfo.price}</p>
                                                         <p>-{pt.productInfo.discount}%</p>
                                                     </div>
                                                 </div>
@@ -156,27 +161,28 @@ const Shipping = () => {
                                 }
                             </div>
                         </div>
+
                         <div className='w-[33%] md-lg:w-full'>
                             <div className="pl-3 md-lg:pl-0">
                                 <div className='bg-white font-medium p-5 text-slate-600 flex flex-col gap-3'>
                                     <h2 className='text-xl font-semibold'>Order Summary</h2>
                                     <div className='flex justify-between items-center'>
                                         <span>Items Total({price})</span>
-                                        <span>${price}</span>
+                                        <span>{price} ETB</span>
                                     </div>
                                     <div className='flex justify-between items-center'>
                                         <span>Delivery Fee</span>
-                                        <span>${shipping_fee}</span>
+                                        <span>{shipping_fee} ETB</span>
                                     </div>
                                     <div className='flex justify-between items-center'>
                                         <span>Total Payment</span>
-                                        <span>${price + shipping_fee}</span>
+                                        <span>{price + shipping_fee} ETB</span>
                                     </div>
                                     <div className='flex justify-between items-center'>
                                         <span>Total</span>
-                                        <span>${price + shipping_fee}</span>
+                                        <span>{price + shipping_fee} ETB</span>
                                     </div>
-                                    <button onClick={placeOrder} disabled={res ? false : true} className={`px-5 py-[6px] rounded-sm hover:shadow-orange-500/20 hover:shadow-lg ${res ? 'bg-orange-500' : 'bg-orange-300'} text-sm text-white uppercase`}>Place Order</button>
+                                    <button onClick={placeOrder} disabled={res ? false : true} className={`px-5 py-[6px] rounded-sm cursor-pointer hover:shadow-orange-500/20 hover:shadow-lg ${res ? 'bg-black' : 'bg-slate-700'} text-sm text-white uppercase`}>Place Order</button>
                                 </div>
                             </div>
                         </div>
@@ -189,3 +195,5 @@ const Shipping = () => {
 }
 
 export default Shipping
+
+

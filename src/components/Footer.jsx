@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link,useNavigate } from 'react-router-dom'
+import { IoIosCall } from 'react-icons/io'
+import { GrMail } from 'react-icons/gr'
 import { FaFacebookF,  FaInstagram ,FaLinkedin, FaTiktok, FaYoutube,} from 'react-icons/fa'
 import { useSelector } from 'react-redux'
 import { AiOutlineTwitter, AiFillHeart, AiFillShopping, AiOutlineShoppingCart } from 'react-icons/ai'
@@ -14,15 +16,26 @@ const Footer = () => {
     
 
     return (
-        <footer className='bg-zinc-600'>
+
+        <footer style={{ backgroundColor: 'rgb(187, 235, 151)' }}>
             <div className='w-[85%] flex flex-wrap mx-auto border-b py-16 md-lg:pb-10 sm:pb-6'>
                 <div className='w-3/12 lg:w-4/12 sm:w-full'>
                     <div className='flex flex-col gap-3'>
-                        <img className='w-[190px] h-[70x]' src=" https://nile-hope-client.vercel.app/images/nile-logo.png" alt="logo" />
-                        <ul className='flex flex-col gap-2 text-slate-50'>
+                        <img className='w-[230px] h-[100x]' src=" https://nile-hope-client.vercel.app/images/nile-logo.png" alt="logo" />
+                        <ul className='flex flex-col gap-2 text-black'>
                             <li>Address : Addis Ababa,Ethiopia</li>
-                            <li>Phone : +251-938-817-656</li>
-                            <li>Email : nilehope.ethiopia@gmail.com</li>
+                            <li className="flex">
+                              <span><IoIosCall /></span>
+                                +251-938-817-656
+                                </li>
+                            <li className="flex">
+                              <span><IoIosCall /></span>
+                                +251-944-817-884
+                                </li>
+                            <li href="mailto:nilehope.ethiopia@gmail.com" className="flex justify-start cursor-pointer items-center gap-2">
+                                <span><GrMail/></span>
+                                <h1>nilehope.ethiopia@gmail.com</h1>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -31,20 +44,20 @@ const Footer = () => {
                         <div>
                             <h2 className='font-bold text-lg mb-2'>Usefull links</h2>
                             <div className='flex justify-between gap-[80px] lg:gap-[40px]'>
-                                <ul className='flex flex-col gap-2 text-slate-50 text-sm'>
-                                    <li>
+                                <ul className='flex flex-col gap-2 text-black text-md'>
+                                    <li className="hover:text-orange-400">
                                         <Link>About Us</Link>
                                     </li>
-                                    <li>
+                                    <li className="hover:text-orange-400">
                                         <Link>About our Shops</Link>
                                     </li>
-                                    <li>
+                                    <li className="hover:text-orange-400">
                                         <Link>Delivery Information</Link>
                                     </li>
-                                    <li>
+                                    <li className="hover:text-orange-400">
                                         <Link>Privacy Policy</Link>
                                     </li>
-                                    <li>
+                                    <li className="hover:text-orange-400">
                                         <Link>Blogs</Link>
                                     </li>
                                 </ul>
@@ -56,8 +69,8 @@ const Footer = () => {
                 <div className='w-4/12 lg:w-full lg:mt-6'>
                     <div className='w-full flex flex-col justify-start gap-5'>
                         <h2 className='font-bold text-lg mb-2 text-stone-900'>Join Our Service</h2>
-                        <span className='text-slate-50'>Get Email updates about our latest and shop special offers:</span>
-                        <div className='h-[50px] w-full bg-white border relative'>
+                        <span className='text-stone-900 text-md'>Get Email updates about our latest and shop special offers:</span>
+                        <div className='h-[50px] w-full bg-slate-100 border relative'>
                             <input placeholder='Enter your mail' className='h-full bg-transparent w-full px-3 outline-0' type="text" />
                             <button className='h-full absolute right-0 bg-black text-white uppercase px-4 font-bold text-sm'>Subscribe</button>
                         </div>
@@ -78,8 +91,8 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className='w-[85%] flex flex-wrap justify-center items-center text-slate-100 mx-auto py-5 text-center'>
-                <span>Copyright ©2024 All rights reserved | mady by <a className='text-blue-500 underline' href="/">Nile Ethiopia</a></span>
+            <div className='w-[85%] flex flex-wrap justify-center items-center text-stone-900 mx-auto py-5 text-center'>
+                <span>Copyright ©2024 All rights reserved</span>
             </div>
 
             <div className='hidden fixed md-lg:block w-[50px] bottom-3 h-[110px] right-2 bg-white rounded-full p-2'>
