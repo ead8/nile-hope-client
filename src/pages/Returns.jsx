@@ -21,7 +21,7 @@ const Return = () => {
     cutoffDate.setDate(cutoffDate.getDate() - 1);
 
     // Filter products added within the last 24 hours
-    const recentProducts = myOrders.filter(order => new Date(order.createdAt) <= cutoffDate);
+    const recentProducts = myOrders.filter(order => new Date(order.createdAt) >= cutoffDate);
 
     const redirect = (ord) => {
         let items = 0;

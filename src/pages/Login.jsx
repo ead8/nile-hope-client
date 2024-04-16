@@ -55,6 +55,7 @@ const Login = () => {
     const handleGoogleLogin = () => {
         window.location.href = "https://nile-hope-3.onrender.com/api/auth/google";
     };
+
     return (
         <div>
             {
@@ -84,10 +85,10 @@ const Login = () => {
                                     <span className='px-3 text-slate-600'>or</span>
                                     <div className='h-[1px] bg-slate-300 w-[95%]'></div>
                                 </div>
-                                <button onClick={handleFacebookLogin} className='px-8 w-full py-2 bg-blue-600 shadow hover:shadow-indigo-500/30 text-white rounded-md flex justify-center items-center gap-2 mb-3'>
+                                <button onClick={handleFacebookLogin} className='px-8 w-full py-2 bg-black shadow hover:shadow-indigo-500/30 text-white rounded-md flex justify-center items-center gap-2 mb-3'>
                                     <span><FaFacebookF /></span>
                                     <span>Login with Facebook</span>
-                                </button>  <button onClick={handleGoogleLogin}  className='px-8 w-full py-2 bg-orange-500 shadow hover:shadow-orange-500/30 text-white rounded-md flex justify-center items-center gap-2 mb-3'>
+                                </button>  <button onClick={handleGoogleLogin}  className='px-8 w-full py-2 bg-black shadow hover:shadow-orange-500/30 text-white rounded-md flex justify-center items-center gap-2 mb-3'>
                                     <span><AiOutlineGoogle /></span>
                                     <span>Login with Google</span>
                                 </button>

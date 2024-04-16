@@ -30,7 +30,7 @@ const Footer = () => {
                                 </li>
                             <li className="flex">
                               <span><IoIosCall /></span>
-                                +251-944-817-884
+                                +251-944-334-526
                                 </li>
                             <li href="mailto:nilehope.ethiopia@gmail.com" className="flex justify-start cursor-pointer items-center gap-2">
                                 <span><GrMail/></span>

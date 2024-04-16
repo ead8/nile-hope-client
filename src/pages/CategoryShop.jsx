@@ -68,9 +68,9 @@ const CategoryShops = () => {
                                 values={state.values}
                                 onChange={(values) => setState({ values })}
                                 renderTrack={({ props, children }) => (
-                                    <div {...props} className='w-full h-[6px] bg-slate-200 rounded-full cursor-default'>
-                                        {children}
-                                    </div>
+                                <div {...props} className='w-full h-[6px] bg-slate-200 rounded-full cursor-default'>
+                                    {children}
+                                </div>
                                 )}
                                 renderThumb={({ props }) => (
                                     <div className='w-[15px] h-[15px] bg-green-500 rounded-full' {...props} />
@@ -118,13 +118,13 @@ const CategoryShops = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            
+                            </div>         
                         </div>
                     </div>
                 </div>
             </section>
-            <div className='w-[85%] ml-auto mr-auto mb-5 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-5 justify-center'>
+            
+            <div className='w-[90%] mx-auto mb-5 grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-5 justify-center'>
                 <ShopProducts products={products} styles={styles} />
             </div>
             <div>

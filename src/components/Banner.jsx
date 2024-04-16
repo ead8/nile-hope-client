@@ -3,6 +3,7 @@ import Carousel from 'react-multi-carousel'
 import  'react-multi-carousel/lib/styles.css'
 import { Link } from 'react-router-dom'
 
+
 const Banner = () => {
     const responsive = {
         superLargeDesktop: {
@@ -25,11 +26,12 @@ const Banner = () => {
     
     
     return (
-        <div className='w-full md-lg:mt-8'>
+      
+  <div className='w-full sm:mt-4 md-lg:mt-8'>
   <div className='w-full mx-auto '>
     <div className='w-full flex flex-wrap '>
       <div className='w-full'>
-        <div className='my-1 '>
+        <div className='my-1 sm:h-[100px]'>
           <Carousel
             autoPlay={true}
             infinite={true}
@@ -39,8 +41,8 @@ const Banner = () => {
           >
             {
               [1, 2, 3, 4, 5, 6, 7].map((img, i) => (
-                <Link className='lg-md:h-[150px] h-auto w-full block' key={i} to='#'> {/* Decreased the height value to 150px */}
-                  <img className='rounded-3xl h-[200px] object-cover w-full' src={` https://nile-hope-client.vercel.app/images/banner/${img}.jpg`}  alt="our banner" />
+                <Link className='lg-md:h-[150px] h-auto w-full block' key={i} to='#'> 
+                  <img className='rounded-3xl h-[200px] sm:h-[100px] sm:rounded-1xl object-cover w-full' src={` https://nile-hope-client.vercel.app/images/banner/${img}.jpg`}  alt="our banner" />
                 </Link>
               ))
             }
@@ -54,5 +56,6 @@ const Banner = () => {
 }
 
 export default Banner
+
 
 

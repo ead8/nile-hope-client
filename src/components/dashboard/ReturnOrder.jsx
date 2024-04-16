@@ -18,7 +18,7 @@ const Order = () => {
 
     const status_update = () => {
         console.log('statu');
-        dispatch(admin_order_status_update({ orderId, info: { status: 'Return Order'} }))
+        dispatch(admin_order_status_update({ orderId, info: { status: 'Return Order',orderedItemInfo:myOrder} }))
         setStatus('Return Order')
     }
 

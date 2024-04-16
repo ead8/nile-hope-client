@@ -17,7 +17,7 @@ const Chapa = ({ price, orderId }) => {
 
     const create_payment = async () => {
         try {
-            const { data } = await axios.post('https://nile-hope-backend.onrender.com/api/order/create-payment', {
+            const { data } = await axios.post('https://nile-hope-3.onrender.com/api/order/create-payment', {
                 price,
                 email: formData.email,
                 first_name: formData.first_name,
@@ -78,7 +78,7 @@ const Chapa = ({ price, orderId }) => {
                     </div>
                 </div>
          
-                <button onClick={create_payment} className='px-10 py-[6px] rounded-sm hover:shadow-orange-500/20 hover:shadow-lg bg-orange-500 text-white'>Pay With Chapa</button>
+                <button onClick={create_payment} className='px-10 py-[6px] rounded-sm hover:shadow-orange-500/20 hover:shadow-lg bg-black text-white'>Pay With Chapa</button>
    
         </div>
     );

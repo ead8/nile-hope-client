@@ -86,6 +86,7 @@ const Shops = () => {
                     </div>
                 </div>
             </section>
+
             <section className='py-16'>
                 <div className='w-[85%] md:w-[90%%] sm:w-[90%] lg:w-[90%] h-full mx-auto'>
                     <div className={`md:block hidden ${!filter ? 'mb-6' : 'mb-0'}`}>
@@ -102,6 +103,7 @@ const Shops = () => {
                                     </div>)
                                 }
                             </div>
+
                             <div className='py-2 flex flex-col gap-5'>
                                 <h2 className='text-3xl font-bold mb-3 text-slate-600'>Price</h2>
                                 <Range
@@ -124,53 +126,7 @@ const Shops = () => {
                                     <span className='text-red-500 font-bold text-lg'>${Math.floor(state.values[0])} - ${Math.floor(state.values[1])}</span>
                                 </div>
                             </div>
-                            <div className='py-3 flex flex-col gap-4'>
-                                <h2 className='text-3xl font-bold mb-3 text-slate-600'>Rating</h2>
-                                <div className='flex flex-col gap-3'>
-                                    <div onClick={() => setRatingQ(5)} className='text-orange-500 flex justify-start items-start gap-2 text-xl cursor-pointer'>
-                                        <span><AiFillStar /></span>
-                                        <span><AiFillStar /></span>
-                                        <span><AiFillStar /></span>
-                                        <span><AiFillStar /></span>
-                                        <span><AiFillStar /></span>
-                                    </div>
-                                    <div onClick={() => setRatingQ(4)} className='text-orange-500 flex justify-start items-start gap-2 text-xl cursor-pointer'>
-                                        <span><AiFillStar /></span>
-                                        <span><AiFillStar /></span>
-                                        <span><AiFillStar /></span>
-                                        <span><AiFillStar /></span>
-                                        <span><CiStar /></span>
-                                    </div>
-                                    <div onClick={() => setRatingQ(3)} className='text-orange-500 flex justify-start items-start gap-2 text-xl cursor-pointer'>
-                                        <span><AiFillStar /></span>
-                                        <span><AiFillStar /></span>
-                                        <span><AiFillStar /></span>
-                                        <span><CiStar /></span>
-                                        <span><CiStar /></span>
-                                    </div>
-                                    <div onClick={() => setRatingQ(2)} className='text-orange-500 flex justify-start items-start gap-2 text-xl cursor-pointer'>
-                                        <span><AiFillStar /></span>
-                                        <span><AiFillStar /></span>
-                                        <span><CiStar /></span>
-                                        <span><CiStar /></span>
-                                        <span><CiStar /></span>
-                                    </div>
-                                    <div onClick={() => setRatingQ(1)} className='text-orange-500 flex justify-start items-start gap-2 text-xl cursor-pointer'>
-                                        <span><AiFillStar /></span>
-                                        <span><CiStar /></span>
-                                        <span><CiStar /></span>
-                                        <span><CiStar /></span>
-                                        <span><CiStar /></span>
-                                    </div>
-                                    <div onClick={resetRating} className='text-orange-500 flex justify-start items-start gap-2 text-xl cursor-pointer'>
-                                        <span><CiStar /></span>
-                                        <span><CiStar /></span>
-                                        <span><CiStar /></span>
-                                        <span><CiStar /></span>
-                                        <span><CiStar /></span>
-                                    </div>
-                                </div>
-                            </div>
+                           
                             <div className='py-5 flex flex-col gap-4 md:hidden'>
                                 <Products title="Latest Products" products={latest_product} />
                             </div>

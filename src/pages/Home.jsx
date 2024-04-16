@@ -57,7 +57,7 @@ const Home = () => {
                 <div className='w-[95%] flex flex-wrap mx-auto'>
                     <div className="w-full gap-5">
                         <div className='overflow-hidden text-center font-bold text-black'>
-                            <h2 className='mb-4 text-2xl'>Latest Products</h2>
+                            <h2 className='mb-5 py-8 text-2xl'>Latest Products</h2>
                             {
                                 latest_product.map((product, i) => (
                                     <FeatureProducts key={i} products={latest_product[i]} />
@@ -71,7 +71,7 @@ const Home = () => {
                 <div className='w-[95%] flex flex-wrap mx-auto'>
                     <div className="w-full gap-5">
                         <div className='overflow-hidden text-center font-bold text-black'>
-                            <h2 className='mb-4 text-2xl'>Top Rated Products</h2>
+                            <h2 className='mb-4 py-8 text-2xl'>Top Rated Products</h2>
                             {
                                 topRated_product.map((product, i) => (
                                     <FeatureProducts key={i} products={topRated_product[i]} />
@@ -81,11 +81,12 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            
             <div className='py-2'>
                 <div className='w-[95%] flex flex-wrap mx-auto'>
                     <div className="w-full gap-5">
                         <div className='overflow-hidden text-center font-bold text-black'>
-                            <h2 className='mb-4 text-2xl'>Discount Products</h2>
+                            <h2 className='mb-4 py-8 text-2xl'>Discount Products</h2>
                             {
                                 discount_product.map((product, i) => (
                                     <FeatureProducts key={i} products={discount_product[i]} />

@@ -20,7 +20,7 @@ import { get_product } from '../store/reducers/homeReducer'
 import { add_to_card, messageClear, add_to_wishlist } from '../store/reducers/cardReducer'
 import toast from 'react-hot-toast'
 
-
+console.log(get_product)
 const Details = () => {
 
     const navigate = useNavigate()
@@ -207,7 +207,7 @@ const Details = () => {
                     <div className='grid grid-cols-2 md-lg:grid-cols-1 gap-8'>
                         <div>
                         <div className='p-5 border relative group'>
-                        <img className='h-[500px] w-full transition-all duration-500 ease-in-out' src={image ? image : product.images?.[currentImageIndex]} alt="" />
+                        <img className='h-[300px] w-full transition-all duration-500 ease-in-out' src={image ? image : product.images?.[currentImageIndex]} alt="Product" />
                         <button onClick={prevImage} className='absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-100 p-2 rounded-md shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-200'>
                         <FiChevronLeft />
                         </button>
@@ -216,7 +216,7 @@ const Details = () => {
                         </button>
                    </div>
 
-                            <div className='py-3'>
+                            <div className='py-3 '>
                                 {
                                     product.images && <Carousel
                                         autoPlay={true}
@@ -228,7 +228,7 @@ const Details = () => {
                                             product.images.map((img, i) => {
                                                 return (
                                                     <div key={i} onClick={() => setImage(img)}>
-                                                        <img className='h-[120px] cursor-pointer' src={img} alt="" />
+                                                        <img className='h-[120px] mx-auto w-[60%] cursor-pointer' src={img} alt="" />
                                                     </div>
                                                 )
                                             })
@@ -237,6 +237,7 @@ const Details = () => {
                                 }
                             </div>
                         </div>
+
                         <div className='flex flex-col gap-5'>
                             <div className='text-3xl text-slate-600 font-bold'>
                                 <h2>{product.name}</h2>
@@ -248,11 +249,11 @@ const Details = () => {
                                 <span className='text-green-500 cursor-pointer' onClick={handleReviewsClick}>(23 reviews)</span>
                             </div>
 
-                            <div className='text-2xl text-red-500 font-bold flex gap-3'>
+                            <div className='text-2xl font-bold flex gap-3'>
                                 {
                                     product.discount !== 0 ? <>
-                                        <h2 className='line-through'>ETB {product.price +product.discount}</h2>
-                                        <h2>{product.price }<span className='ml-1'>ETB</span></h2>
+                                        <h2 className='line-through text-red-300'>ETB {product.price +product.discount}</h2>
+                                        <h2 className="text-slate-600">{product.price }<span className='ml-1'>ETB</span></h2>
                                     </> : <h2>Price : {product.price} {" "} <span className='ml-1'>ETB</span></h2>
                                 }
                             </div>
@@ -268,12 +269,12 @@ const Details = () => {
                                             <div onClick={inc} className='px-6 cursor-pointer' title="Add Product">+</div>
                                         </div>
                                         <div>
-                                            <button onClick={add_card} className='px-8 py-3 h-[50px] cursor-pointer hover:shadow-lg hover:shadow-slate-800 bg-black text-white'>Add To Cart</button>
+                                            <button onClick={add_card} className='px-8 py-3 sm:text-sm h-[50px] cursor-pointer hover:shadow-lg hover:shadow-slate-800 bg-black text-white'>Add To Cart</button>
                                         </div>
                                     </> : ''
                                 }
                                 <div>
-                                    <div onClick={add_wishlist} className='h-[50px] w-[50px] flex justify-center items-center cursor-pointer hover:shadow-lg hover:shadow-cyan-500/40 bg-slate-300 text-green-500'>
+                                    <div onClick={add_wishlist} className='h-[50px] w-[50px] flex justify-center items-center cursor-pointer hover:shadow-lg hover:shadow-cyan-500/40 bg-slate-300 text-lg text-green-500'>
                                         <AiFillHeart/>
                                     </div>
                                 </div>
@@ -310,6 +311,45 @@ const Details = () => {
                                 {/* <Link to={`/dashboard/chat/${product.sellerId}`}limelime block'>Chat Seller</Link> */}
                             </div>
                         </div>
+
+                        <div className='flex gap-3 pb-10 border-b'>
+    {
+        product.colors && product.colors.length > 0 && (
+            <div>
+                <span className='text-lg font-semibold'>Colors:</span>
+                <div className='flex gap-2'>
+                    {product.colors.map((color, index) => (
+                        <div
+                            key={index}
+                            className='w-8 h-8 rounded-full border border-gray-300'
+                            style={{ backgroundColor: color, cursor: 'pointer' }}
+                            title={color}
+                        />
+                    ))}
+                </div>
+            </div>
+        )
+    }
+    {
+        product.sizes && product.sizes.length > 0 && (
+            <div>
+                <span className='text-lg font-semibold'>Sizes:</span>
+                <div className='flex gap-2'>
+                    {product.sizes.map((size, index) => (
+                        <div
+                            key={index}
+                            className='px-3 py-1 border border-gray-300 rounded-md text-center cursor-pointer'
+                            title={size}
+                        >
+                            {size}
+                        </div>
+                    ))}
+                </div>
+            </div>
+        )
+    }
+</div>
+
                     </div>
                 </div>
             </section>
@@ -320,8 +360,8 @@ const Details = () => {
                         <div className='w-[72%] md-lg:w-full'>
                             <div className='pr-4 md-lg:pr-0'>
                                 <div id="reviews-section" ref={reviewsRef} className='grid grid-cols-2'>
-                                    <button onClick={() => setState('reviews')}  className={`py-1 hover:text-white px-5 hover:bg-green-500 ${state === 'reviews' ? 'bg-green-500 text-white' : 'bg-slate-200 text-slate-700'} rounded-sm`}>Reviews</button>
-                                    <button onClick={() => setState('description')} className={`py-1 px-5 hover:text-white hover:bg-green-500 ${state === 'description' ? 'bg-green-500 text-white' : 'bg-slate-200 text-slate-700'} rounded-sm`}>Description</button>
+                                    <button onClick={() => setState('reviews')}  className={`py-1 hover:text-white px-5 hover:bg-[#bbeb97] ${state === 'reviews' ? 'bg-[#bbeb97] text-black' : 'bg-slate-200 text-slate-700'} rounded-sm`}>Reviews</button>
+                                    <button onClick={() => setState('description')} className={`py-1 px-5 hover:text-white hover:bg-[#bbeb97] ${state === 'description' ? 'bg-[#bbeb97] text-black' : 'bg-slate-200 text-slate-700'} rounded-sm`}>Description</button>
                                 </div>
                                 <div>
                                     {

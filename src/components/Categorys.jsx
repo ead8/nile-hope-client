@@ -40,11 +40,11 @@ const Categorys = () => {
 
 
     return (
-        <div className='w-full mx-auto relative grid grid-cols-6 sm:grid-cols-3 px-2 md:grid-cols-6 gap-4 md:gap-8'>
+        <div className='w-full mx-auto md:w-[90%] sm:w-[90%] gap-2 relative grid grid-cols-6 sm:grid-cols-3 py-6 px-2 md:grid-cols-6 gap-4 md:gap-8 sm:mt-2'>
             {categorys.map((c, i) => (
                 <Link to={`/products?category=${c.name}`} className='flex flex-col items-center' key={i}>
-                    <div className='w-24 h-24 md:w-32 md:h-32 overflow-hidden rounded-full'>
-                        <img src={c.image} alt="category" className='object-cover w-full h-full' />
+                    <div className='w-24 h-24 md:w-20 md:h-20 overflow-hidden rounded-full'>
+                      <img src={c.image} alt="category" className='object-cover w-full h-full' />
                     </div>
                     <span className='mt-3 text-center font-bold text-slate-500'>{c.name}</span>
                 </Link>

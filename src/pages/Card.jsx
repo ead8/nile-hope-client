@@ -77,7 +77,7 @@ const Card = () => {
                             <div className='w-[67%] md-lg:w-full'>
                                 <div className='pr-3 md-lg:pr-0'>
                                     <div className='flex flex-col gap-3'>
-                                        <div className='bg-green-600 p-4'>
+                                        <div className='bg-[#bbeb97] p-4'>
                                             <h2 className='text-md text-black font-semibold'>STOCK PRODUCTS - {card_products.length}</h2>
                                         </div>
                                         {
