@@ -11,7 +11,8 @@ const Shipping = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const { userInfo } = useSelector(state => state.auth)
-    const { state: { products, price, shipping_fee, items } } = useLocation()
+    const { state: { products, price, shipping_fee, items, color= '', size= '',image= '',quantity = ''} } = useLocation()
+  
     const [res, setRes] = useState(false)
     const [state, setState] = useState({
         name: '',
@@ -41,7 +42,13 @@ const Shipping = () => {
     const placeOrder = () => {
         dispatch(place_order({
             price,
-            products,
+            quantity,
+            products:products.map(product => ({
+                ...product,
+                color, 
+                size, 
+                image  
+            })),
             shipping_fee,
             shippingInfo: state,
             userId: userInfo.id,
@@ -49,7 +56,6 @@ const Shipping = () => {
             items
         }))
     }
-
 
     return (
         <div>
@@ -139,13 +145,26 @@ const Shipping = () => {
                                         </div>
                                         {
                                             p.products.map((pt, j) => <div key={i + 99} className='w-full flex flex-wrap'>
+                                                
                                                 <div className='flex sm:w-full gap-2 w-7/12'>
                                                     <div className='flex gap-2 justify-start items-center'>
-                                                        <img className='w-[80px] h-[80px]' src={pt.productInfo.images[0]} alt="product image" />
-                                                        <div className='pr-4 text-slate-600'>
-                                                            <h2 className='text-md'>{pt.productInfo.name}</h2>
-                                                            <span className='text-sm'>Brand : {pt.productInfo.brand}</span>
+                                                    <section className='bg-white p-6 shadow-sm rounded-md mb-4'>
+                                                        <h2 className='text-xl font-bold mb-3'>Selected Product Options</h2>
+                                                        <div className="flex justify-between items-center">
+                                                            <div>
+                                                                <p><strong>Color:</strong> {color}</p>
+                                                                <p><strong>Size:</strong> {size}</p>
+                                                            </div>
+                                                            {image && (
+                                                                <img src={image} alt="Selected Product" style={{ maxWidth: '100px', borderRadius: '8px' }} />
+                                                            )}
                                                         </div>
+                                                            <div className='pr-4 text-slate-600'>
+                                                                <h2 className='text-md'>{pt.productInfo.name}</h2>
+                                                                <span className='text-sm'>Brand : {pt.productInfo.brand}</span>
+                                                            </div>
+                                                    </section>
+
                                                     </div>
                                                 </div>
                                                 <div className='flex justify-end w-5/12 sm:w-full sm:mt-3'>

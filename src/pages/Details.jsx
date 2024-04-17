@@ -20,9 +20,8 @@ import { get_product } from '../store/reducers/homeReducer'
 import { add_to_card, messageClear, add_to_wishlist } from '../store/reducers/cardReducer'
 import toast from 'react-hot-toast'
 
-console.log(get_product)
 const Details = () => {
-
+   
     const navigate = useNavigate()
     const { slug } = useParams()
     const dispatch = useDispatch()
@@ -32,6 +31,9 @@ const Details = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [image, setImage] = useState('')
     const [state, setState] = useState('reviews')
+    const [selectedColor, setSelectedColor] = useState('');
+    const [selectedSize, setSelectedSize] = useState('');
+
     const responsive = {
         superLargeDesktop: {
             breakpoint: { max: 4000, min: 3000 },
@@ -84,7 +86,9 @@ const Details = () => {
             dispatch(add_to_card({
                 userId: userInfo.id,
                 quantity,
-                productId: product._id
+                productId: product._id,
+                color: selectedColor,
+                size: selectedSize
             }))
         } else {
             navigate('/login')
@@ -101,7 +105,9 @@ const Details = () => {
                 image: product.images[0],
                 discount: product.discount,
                 rating: product.rating,
-                slug: product.slug
+                slug: product.slug,
+                color: selectedColor,
+                size: selectedSize
             }))
         } else {
             navigate('/login')
@@ -129,7 +135,11 @@ const Details = () => {
             navigate('/login');
             return;
         }
-        
+        if ((product.colors && product.colors.length > 0 && !selectedColor) ||
+        (product.sizes && product.sizes.length > 0 && !selectedSize)) {
+        toast.error('Please select a color and size.');
+        return;
+    }
         let price = 0;
         if (product.discount !== 0) {
             price = product.price - Math.floor((product.price * product.discount) / 100)
@@ -143,7 +153,6 @@ const Details = () => {
                 price: quantity * (price - Math.floor((price * 5) / 100)),
                 products: [
                     {
-                        quantity,
                         productInfo: product
                     }
                 ]
@@ -154,11 +163,16 @@ const Details = () => {
                 products: obj,
                 price: price * quantity,
                 shipping_fee: 0,
+                color: selectedColor,
+                size: selectedSize,
+                image:image,
+                quantity: quantity,
                 items: 1
             }
         })
     }
-
+    
+console.log(product,'product');
 // Implementing the prev icon and the next icons on the product images
  
       const nextImage = () => {
@@ -312,42 +326,29 @@ const Details = () => {
                             </div>
                         </div>
 
-                        <div className='flex gap-3 pb-10 border-b'>
-    {
-        product.colors && product.colors.length > 0 && (
-            <div>
-                <span className='text-lg font-semibold'>Colors:</span>
-                <div className='flex gap-2'>
-                    {product.colors.map((color, index) => (
-                        <div
-                            key={index}
-                            className='w-8 h-8 rounded-full border border-gray-300'
-                            style={{ backgroundColor: color, cursor: 'pointer' }}
-                            title={color}
-                        />
-                    ))}
-                </div>
-            </div>
-        )
-    }
-    {
-        product.sizes && product.sizes.length > 0 && (
-            <div>
-                <span className='text-lg font-semibold'>Sizes:</span>
-                <div className='flex gap-2'>
-                    {product.sizes.map((size, index) => (
-                        <div
-                            key={index}
-                            className='px-3 py-1 border border-gray-300 rounded-md text-center cursor-pointer'
-                            title={size}
-                        >
-                            {size}
-                        </div>
-                    ))}
-                </div>
-            </div>
-        )
-    }
+                        <div className='flex gap-2'>
+                        {product.colors && product.colors[0]?.split(',').map((color, index) => (
+                              <button
+                              key={index}
+                              style={{ backgroundColor: color }}
+                              className={`w-8 h-8 rounded-full cursor-pointer ${selectedColor === color ? 'ring-2 ring-offset-1 ring-black' : 'border border-gray-300'}`}
+                              onClick={() => setSelectedColor(color)}
+                              title={color}
+                          />
+                        ))}
+                    </div>
+
+                    <div className='flex gap-2'>
+    {product.sizes && product.sizes[0]?.split(',').map((size, index) => (
+       <button
+       key={index}
+       className={`px-3 py-1 cursor-pointer ${selectedSize === size ? 'bg-black text-white' : 'border border-gray-300 bg-white text-black'} rounded-md`}
+       onClick={() => setSelectedSize(size)}
+       title={size}
+   >
+       {size}
+   </button>
+    ))}
 </div>
 
                     </div>

@@ -21,7 +21,8 @@ const Chapa = ({ price, orderId }) => {
                 price,
                 email: formData.email,
                 first_name: formData.first_name,
-                last_name: formData.last_name
+                last_name: formData.last_name,
+                orderId
             }, { withCredentials: true });
 
             // Redirect the user to the CHAPA payment page

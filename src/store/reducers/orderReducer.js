@@ -8,29 +8,33 @@ export const place_order = createAsyncThunk(
     'order/place_order',
     async ({
         price,
+        quantity,
         products,
         shipping_fee,
         shippingInfo,
         userId,
         navigate,
-        items
+        items,
     }) => {
         try {
             const {
                 data
             } = await api.post('/home/order/palce-order', {
                 price,
+                quantity,
                 products,
                 shipping_fee,
                 shippingInfo,
                 userId,
                 navigate,
                 items,
+                quantity
             })
             navigate('/payment', {
                 state: {
                     price: price + shipping_fee,
                     items,
+                    quantity,
                     orderId: data.orderId
                 }
             })
