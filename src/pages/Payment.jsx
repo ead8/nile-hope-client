@@ -4,7 +4,7 @@ import Footer from '../components/Footer'
 import Stripe from '../components/Chapa'
 import { useLocation } from 'react-router-dom'
 const Payment = () => {
-    const { state: { price, items, orderId } } = useLocation()
+    const { state: { price, items, orderId,quantity } } = useLocation()
     const [paymentMethod, setPaymentMethod] = useState('stripe')
     return (
         <div>
@@ -25,7 +25,7 @@ const Payment = () => {
                                 </div>
                                 {
                                     paymentMethod === 'stripe' && <div>
-                                        <Stripe orderId={orderId} price={price} />
+                                        <Stripe orderId={orderId} price={price} quantity={quantity} />
                                     </div>
                                 }
                                 {

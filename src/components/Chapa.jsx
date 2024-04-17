@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-
-const Chapa = ({ price, orderId }) => {
+import api from '../api/api';
+const Chapa = ({ price, orderId,quantity }) => {
     const [formData, setFormData] = useState({
         email: '',
         first_name: '',
@@ -17,8 +16,9 @@ const Chapa = ({ price, orderId }) => {
 
     const create_payment = async () => {
         try {
-            const { data } = await axios.post('https://nile-hope-3.onrender.com/api/order/create-payment', {
+            const { data } = await api.post('/order/create-payment', {
                 price,
+                quantity,
                 email: formData.email,
                 first_name: formData.first_name,
                 last_name: formData.last_name,
@@ -43,7 +43,7 @@ const Chapa = ({ price, orderId }) => {
         }
 
         try {
-            const { data } = await axios.get(`https://nile-hope-backend.onrender.com/api/order/verify-payment/${transactionId}`, { withCredentials: true });
+            const { data } = await api.get(`/api/order/verify-payment/${transactionId}`, { withCredentials: true });
 
             if (data.message === 'success') {
                 // Redirect to success page
